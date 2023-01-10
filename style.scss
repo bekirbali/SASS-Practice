@@ -31,6 +31,8 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  position: sticky;
+  top: 0;
 
   img {
     width: 80px;
@@ -130,5 +132,47 @@ header {
 
   .card4 {
     @include myBox(magenta, orange);
+  }
+}
+
+.articles {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  .article1 {
+    background-color: grey;
+    width: 50%;
+    height: 10rem;
+    border-radius: 10px;
+  }
+  .article2 {
+    @extend .article1;
+    background-color: hotpink;
+  }
+}
+
+footer {
+  $dark: 1;
+  p {
+    @if $dark == 1 {
+      background-color: gray;
+    } @else if $dark == 2 {
+      background-color: lightgray;
+    } @else {
+      background-color: darkgrey;
+    }
+  }
+  .social-icons {
+    display: flex;
+    height: 10rem;
+    $textColor: #990000, #55004e, #0fa8a1, #121456, #64c217;
+    @for $i from 1 through 5 {
+      .social#{$i} {
+        width: 20%;
+        background-color: lighten(blue, $i * 5);
+        font-size: $i * 1rem;
+        color: nth($textColor, -$i);
+      }
+    }
   }
 }

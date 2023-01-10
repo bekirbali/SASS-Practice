@@ -17,6 +17,8 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  position: sticky;
+  top: 0;
 }
 header img {
   width: 80px;
@@ -113,6 +115,59 @@ header a {
   height: 15rem;
   border: 2px solid brown;
   border-radius: 5px;
+}
+
+.articles {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+}
+.articles .article1, .articles .article2 {
+  background-color: grey;
+  width: 50%;
+  height: 10rem;
+  border-radius: 10px;
+}
+.articles .article2 {
+  background-color: hotpink;
+}
+
+footer p {
+  background-color: gray;
+}
+footer .social-icons {
+  display: flex;
+  height: 10rem;
+}
+footer .social-icons .social1 {
+  width: 20%;
+  background-color: #1a1aff;
+  font-size: 1rem;
+  color: #64c217;
+}
+footer .social-icons .social2 {
+  width: 20%;
+  background-color: #3333ff;
+  font-size: 2rem;
+  color: #121456;
+}
+footer .social-icons .social3 {
+  width: 20%;
+  background-color: #4d4dff;
+  font-size: 3rem;
+  color: #0fa8a1;
+}
+footer .social-icons .social4 {
+  width: 20%;
+  background-color: #6666ff;
+  font-size: 4rem;
+  color: #55004e;
+}
+footer .social-icons .social5 {
+  width: 20%;
+  background-color: #8080ff;
+  font-size: 5rem;
+  color: #990000;
 }
 
 /*# sourceMappingURL=style.css.map */
