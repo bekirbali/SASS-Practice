@@ -3,40 +3,132 @@
   padding: 0;
   box-sizing: border-box;
 }
+//********************************************/
+//* Variable Declaration
+//********************************************/
 
 $bgColor: pink;
-$fontFam: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+$fontFamily: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 $fontSize: 1.2rem;
-$navBg: #30a7c3;
-$bannerBg: hotpink;
+$navBgColor: #30a7c3;
+$bannerBgColor: hotpink;
+$myBorder: 2px solid brown;
+$fontColor: white;
+$buttonColor: #00d0ff;
 
 body {
   background-color: $bgColor;
-  font-family: $fontFam;
+  font-family: $fontFamily;
   font-size: $fontSize;
-  color: white;
+  color: $fontColor;
 }
 
+//*******  HEADER *********/
+
 header {
-  padding: 1rem;
-  background-color: $navBg;
+  background-color: $navBgColor;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem;
+
   img {
     width: 80px;
-    border: 2px solid rgb(180, 52, 116);
+    border: $myBorder;
     border-radius: 10px;
   }
   ul {
+    list-style-type: none;
     display: flex;
     gap: 1rem;
+
     li {
-      list-style-type: none;
-      a {
-        text-decoration: none;
-        color: white;
+      padding: 0.5rem;
+      //! içinde bulundğumuz elementi refere etmek için & işareti kullanılır.
+      &:hover {
+        text-decoration: underline;
       }
     }
+  }
+  a {
+    color: $fontColor;
+    text-decoration: none;
+  }
+}
+
+//*******  BANNER *********/
+
+.banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $bannerBgColor;
+  padding: 1rem;
+  line-height: 2rem;
+
+  aside {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    .button {
+      display: flex;
+      gap: 1rem;
+      button {
+        width: 8rem;
+        padding: 0.5rem;
+        border: none;
+        border-radius: 5px;
+        background-color: $buttonColor;
+        color: white;
+        transition: ease-in-out 0.4s;
+        &:hover {
+          background-color: pink;
+          cursor: pointer;
+          color: black;
+        }
+      }
+    }
+  }
+
+  img {
+    width: 30%;
+    min-width: 250px;
+    max-width: 400px;
+  }
+}
+
+//*******  CARDS  *********/
+//*****************
+//! @MIXIN
+//*****************
+
+@mixin myBox($backColor, $color) {
+  background-color: $backColor;
+  color: $color;
+  width: 25%;
+  height: 15rem;
+  border: $myBorder;
+  border-radius: 5px;
+}
+
+.cards {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.4rem;
+  justify-content: space-evenly;
+  .card1 {
+    @include myBox(yellow, red);
+  }
+
+  .card2 {
+    @include myBox(blue, white);
+  }
+
+  .card3 {
+    @include myBox(green, yellow);
+  }
+
+  .card4 {
+    @include myBox(magenta, orange);
   }
 }
