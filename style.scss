@@ -118,20 +118,33 @@ header {
   gap: 0.5rem;
   padding: 0.4rem;
   justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+
+  .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .card1 {
     @include myBox(yellow, red);
+    border: none;
   }
 
   .card2 {
     @include myBox(blue, white);
+    border: none;
   }
 
   .card3 {
     @include myBox(green, yellow);
+    border: none;
   }
 
   .card4 {
     @include myBox(magenta, orange);
+    border: none;
   }
 }
 
@@ -139,6 +152,7 @@ header {
   display: flex;
   gap: 1rem;
   padding: 1rem;
+  text-align: center;
   .article1 {
     background-color: grey;
     width: 50%;
@@ -147,12 +161,14 @@ header {
   }
   .article2 {
     @extend .article1;
+
     background-color: hotpink;
   }
 }
 
 footer {
   $dark: 1;
+  text-align: center;
   p {
     @if $dark == 1 {
       background-color: gray;
