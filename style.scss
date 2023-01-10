@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$bgColor: pink;
+$fontFam: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+$fontSize: 1.2rem;
+$navBg: #30a7c3;
+$bannerBg: hotpink;
+
+body {
+  background-color: $bgColor;
+  font-family: $fontFam;
+  font-size: $fontSize;
+  color: white;
+}
+
+header {
+  padding: 1rem;
+  background-color: $navBg;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  img {
+    width: 80px;
+    border: 2px solid rgb(180, 52, 116);
+    border-radius: 10px;
+  }
+  ul {
+    display: flex;
+    gap: 1rem;
+    li {
+      list-style-type: none;
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }
+}
